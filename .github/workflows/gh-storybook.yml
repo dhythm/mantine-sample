@@ -21,7 +21,8 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
-      - uses: ./.github/actions/npm-cache
+      # - uses: ./.github/actions/npm-cache
+      - run: npm install
       - name: Build Storybook
         run: npm run build-storybook
       - name: Upload artifact
