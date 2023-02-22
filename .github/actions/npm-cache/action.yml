@@ -20,7 +20,5 @@ runs:
     # - if: ${{ steps.node_modules_cache_id.outputs.cache-hit != 'true' }}
     - shell: bash
       run: npm install
-      env: 
-        NODE_OPTIONS: '--openssl-legacy-provider'
 
 
