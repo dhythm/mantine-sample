@@ -1,6 +1,5 @@
 import React from "react";
 import type { ComponentStory, ComponentMeta } from "@storybook/react";
-import { action } from "@storybook/addon-actions";
 import { Box, Button } from "@mantine/core";
 
 // More on default export: https://storybook.js.org/docs/react/writing-stories/introduction#default-export
@@ -15,51 +14,55 @@ export default {
 const Template: ComponentStory<typeof Button> = (args) => (
   <Box sx={{ display: "flex", flexDirection: "column", rowGap: 8 }}>
     <Box sx={{ display: "flex", columnGap: 8 }}>
-      {["xs", "sm", "md", "lg", "xl"].map((size, i) => (
+      {(["xs", "sm", "md", "lg", "xl"] as const).map((size, i) => (
         <Button key={i} {...args} size={size}>
           Size
         </Button>
       ))}
     </Box>
     <Box sx={{ display: "flex", columnGap: 8 }}>
-      {["xs", "sm", "md", "lg", "xl"].map((radius, i) => (
+      {(["xs", "sm", "md", "lg", "xl"] as const).map((radius, i) => (
         <Button key={i} {...args} radius={radius}>
           Radius
         </Button>
       ))}
     </Box>
     <Box sx={{ display: "flex", columnGap: 8 }}>
-      {[
-        "dark",
-        "gray",
-        "red",
-        "pink",
-        "grape",
-        "violet",
-        "indigo",
-        "blue",
-        "cyan",
-        "teal",
-        "green",
-        "lime",
-        "yellow",
-        "orange",
-      ].map((color, i) => (
+      {(
+        [
+          "dark",
+          "gray",
+          "red",
+          "pink",
+          "grape",
+          "violet",
+          "indigo",
+          "blue",
+          "cyan",
+          "teal",
+          "green",
+          "lime",
+          "yellow",
+          "orange",
+        ] as const
+      ).map((color, i) => (
         <Button key={i} {...args} color={color}>
           Color
         </Button>
       ))}
     </Box>
     <Box sx={{ display: "flex", columnGap: 8 }}>
-      {[
-        "outline",
-        "white",
-        "light",
-        "default",
-        "filled",
-        "subtle",
-        "gradient",
-      ].map((variant, i) => (
+      {(
+        [
+          "outline",
+          "white",
+          "light",
+          "default",
+          "filled",
+          "subtle",
+          "gradient",
+        ] as const
+      ).map((variant, i) => (
         <Button key={i} {...args} variant={variant}>
           Variant
         </Button>
