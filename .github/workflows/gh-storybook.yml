@@ -21,10 +21,10 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
-      # - uses: ./.github/actions/npm-cache
-      - run: npm install
-        env: 
-          NODE_OPTIONS: '--openssl-legacy-provider'
+      - uses: ./.github/actions/npm-cache
+      # - run: npm install
+      #   env: 
+      #     NODE_OPTIONS: '--openssl-legacy-provider'
       - name: Build Storybook
         run: npm run build-storybook
       - name: Upload artifact
